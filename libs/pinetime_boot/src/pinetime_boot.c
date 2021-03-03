@@ -122,7 +122,7 @@ void setup_watchdog() {
   NRF_WDT->CONFIG |= (WDT_CONFIG_HALT_Pause << WDT_CONFIG_HALT_Pos);
 
   /* timeout (s) = (CRV + 1) / 32768 */
-  const int timeoutSeconds = 7; // 7 seconds
+  const int timeoutSeconds = 12; // 7 seconds
   uint32_t crv = (((timeoutSeconds*1000u) << 15u) / 1000) - 1;
   NRF_WDT->CRV = crv;
 
